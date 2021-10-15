@@ -64,9 +64,26 @@ public class BOOK_STORE_USING_JAVA {
 			b_name=sc.nextLine();
 			System.out.print("Enter Book Price:");
 			p_book=sc.nextDouble();
-			System.out.print("Enter Author Name:");
-			sc.nextLine();
-			a_name=sc.nextLine();
+			System.out.print("Enter number of authors:");
+			int n;
+			n=sc.nextInt();
+			System.out.println("Enter Author Names:");
+			//booklist.add
+	                String[] author=new String[n];
+			for(int j=0;j<n;j++)
+			{
+				author[j]=sc.next();
+			}
+			for(int i=0;i<n;i++)
+			{
+				if(i<(n-1))
+				a_name=a_name+author[i]+", ";
+				if((i+1)==n)
+				{
+					a_name=a_name+author[i]+" ]";
+				}
+			}
+				
 			
 			booklist.add(new Book(id,b_name.toUpperCase(),p_book,a_name.toUpperCase()));
 			System.out.println("'"+b_name+"'"+" Having id '"+id+"' is added in List.");
